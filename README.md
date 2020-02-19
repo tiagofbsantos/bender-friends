@@ -1,5 +1,5 @@
 # bender-friends
-Bender friends - an interactive React and Redux app for finding bender friends
+Bender friends - an interactive Progressive Web App with React and Redux for finding bender friends
 
 Using:
 
