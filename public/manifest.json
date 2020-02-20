@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
+  "start_url": ".",
+  "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "start_url": "https://tiagofbsantos.github.io/bender-friends/",
-  "display": "standalone"
+  "background_color": "#ffffff"
 }
