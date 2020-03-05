@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
+  bobby:
     executor:
       name: node/default
     steps:
@@ -11,7 +11,25 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+            - run:
+                name: The First Step
+                command: |
+                  echo 'A first hello'
+                  echo 'This is the delivery pipeline'
+  sally:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run: npm install
+      - run: npm test
+      - run:
+          name: The First Step
+          command: |
+            echo 'Double trouble'
+            echo 'This is the delivery pipeline'          
 workflows:
-    build-and-test:
+    bobby_sally:
       jobs:
-        - build-and-test
+        - bobby
+        - sally
+  
