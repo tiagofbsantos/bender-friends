@@ -11,7 +11,7 @@ jobs:
           steps:
             - run: echo "npm installing"
             - run: npm install
-            - run: CI=true npm run build      
+            - run: CI=true npm run build
   test:
     executor:
       name: node/default
@@ -31,10 +31,10 @@ jobs:
           steps:
             - run: echo "hellooo!"
 workflows:
-    build_test_and_lint:
-      jobs:
-        - build
-        - hithere
-        - test:
-            requires:
-              - hithere
+  build_test_and_lint:
+    jobs:
+      - build
+      - hithere
+      - test:
+          requires:
+            - hithere
