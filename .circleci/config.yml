@@ -27,13 +27,15 @@ jobs:
       name: node/default
     steps:
       - checkout
-      - run: echo "hellooo!"
+      - node/with-cache:
+          steps:
+            - run: echo "hellooo!"
 workflows:
     build_test_and_lint:
       jobs:
         - build
         - hithere
         - test:
-          requires:
-            - hithere
+            requires:
+              - hithere
   
