@@ -2,37 +2,38 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  bobby:
+  build:
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
           steps:
+            - run: echo "npm installing"
             - run: npm install
-            - run: npm test
-            - run:
-                name: The First Step
-                command: |
-                  echo 'A first hello'
-                  echo 'This is the delivery pipeline'
-  sally:
+            - run: CI=true npm run build      
+  test:
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
           steps:
+            - run: echo "testing stuff"
             - run: npm install
             - run: npm test
-            - run:
-                name: The First Step
-                command: |
-                  echo 'Double trouble'
-                  echo 'This is the delivery pipeline'          
+  hithere:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: echo "hellooo!"
 workflows:
-    bobby_sally:
+    build_test_and_lint:
       jobs:
-        - bobby
-        - sally
+        - build
+        - hithere
+        - test:
+          requires:
+            - hithere
   
