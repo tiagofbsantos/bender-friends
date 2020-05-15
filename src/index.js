@@ -6,11 +6,11 @@ import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import "tachyons";
 
-import App from "./containers/App";
+import App from "./containers/app";
 import * as serviceWorker from "./serviceWorker";
 import { searchRobots, requestRobots } from "./reducers";
 
-import "./index.css";
+import "./index.styles.css";
 
 const logger = createLogger();
 

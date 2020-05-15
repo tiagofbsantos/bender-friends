@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import React from "react";
-import MainPage from "./MainPage";
+import MainPage from "./main-page.component";
 
 let wrapper;
 
@@ -9,7 +9,7 @@ beforeEach(() => {
     onRequestRobots: jest.fn(),
     robots: [],
     searchField: "",
-    isPending: false
+    isPending: false,
   };
   wrapper = shallow(<MainPage {...mockProps} />);
 });
@@ -25,19 +25,19 @@ it("filters robots correctly", () => {
       {
         id: 3,
         name: "John",
-        email: "john@gmail.com"
-      }
+        email: "john@gmail.com",
+      },
     ],
     searchField: "john",
-    isPending: false
+    isPending: false,
   };
   const wrapper2 = shallow(<MainPage {...mockProps2} />);
   expect(wrapper2.instance().filterRobots()).toEqual([
     {
       id: 3,
       name: "John",
-      email: "john@gmail.com"
-    }
+      email: "john@gmail.com",
+    },
   ]);
 });
 
@@ -48,11 +48,11 @@ it("filters robots correctly 2", () => {
       {
         id: 3,
         name: "John",
-        email: "john@gmail.com"
-      }
+        email: "john@gmail.com",
+      },
     ],
     searchField: "john",
-    isPending: false
+    isPending: false,
   };
   const filteredRobots = [];
   const wrapper3 = shallow(<MainPage {...mockProps3} />);
@@ -60,7 +60,7 @@ it("filters robots correctly 2", () => {
     {
       id: 3,
       name: "John",
-      email: "john@gmail.com"
-    }
+      email: "john@gmail.com",
+    },
   ]);
 });

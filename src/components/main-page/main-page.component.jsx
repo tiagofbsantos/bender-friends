@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
-import Scroll from "./Scroll";
-import ErrorBoundary from "./ErrorBoundary";
-import Header from "./Header";
+import CardList from "../card-list/card-list.component";
+import SearchBox from "../search-box/search-box.component";
+import Scroll from "../scroll/scroll.component";
+import ErrorBoundary from "../error-boundary/error-boundary.component";
+import Header from "../header/header.component";
 
-import "./MainPage.css";
+import "./main-page.styles.css";
 
 class MainPage extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class MainPage extends Component {
   }
 
   filterRobots = () => {
-    return this.props.robots.filter(robot => {
+    return this.props.robots.filter((robot) => {
       return robot.name
         .toLowerCase()
         .includes(this.props.searchField.toLowerCase());
