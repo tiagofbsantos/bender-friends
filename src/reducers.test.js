@@ -1,91 +1,91 @@
 import {
   CHANGE_SEARCH_FIELD,
-  REQUEST_ROBOTS_PENDING,
-  REQUEST_ROBOTS_SUCCESS,
-  REQUEST_ROBOTS_FAILED
+  REQUEST_KITTENS_PENDING,
+  REQUEST_KITTENS_SUCCESS,
+  REQUEST_KITTENS_FAILED,
 } from "./constants.js";
 
 import * as reducers from "./reducers";
 
-describe("searchRobots", () => {
+describe("searchKittens", () => {
   const initialStateSearch = {
-    searchField: ""
+    searchField: "",
   };
 
   it("should return the initial state", () => {
-    expect(reducers.searchRobots(undefined, {})).toEqual({ searchField: "" });
+    expect(reducers.searchKittens(undefined, {})).toEqual({ searchField: "" });
   });
 
   it("should handle CHANGE_SEARCHFIELD", () => {
     expect(
-      reducers.searchRobots(initialStateSearch, {
+      reducers.searchKittens(initialStateSearch, {
         type: CHANGE_SEARCH_FIELD,
-        payload: "abc"
+        payload: "abc",
       })
     ).toEqual({
-      searchField: "abc"
+      searchField: "abc",
     });
   });
 });
 
-describe("requestRobots", () => {
-  const initialStateRobots = {
+describe("requestKittens", () => {
+  const initialStateKittens = {
     isPending: false,
-    robots: [],
-    error: ""
+    kittens: [],
+    error: "",
   };
 
   it("should return the initial state", () => {
-    expect(reducers.requestRobots(undefined, {})).toEqual(initialStateRobots);
+    expect(reducers.requestKittens(undefined, {})).toEqual(initialStateKittens);
   });
 
-  it("sould handle REQUEST_ROBOTS_PENDING action", () => {
+  it("sould handle REQUEST_KITTENS_PENDING action", () => {
     expect(
-      reducers.requestRobots(initialStateRobots, {
-        type: REQUEST_ROBOTS_PENDING
+      reducers.requestKittens(initialStateKittens, {
+        type: REQUEST_KITTENS_PENDING,
       })
     ).toEqual({
       isPending: true,
-      robots: [],
-      error: ""
+      kittens: [],
+      error: "",
     });
   });
 
-  it("sould handle REQUEST_ROBOTS_SUCCESS action", () => {
+  it("sould handle REQUEST_KITTENS_SUCCESS action", () => {
     expect(
-      reducers.requestRobots(initialStateRobots, {
-        type: REQUEST_ROBOTS_SUCCESS,
+      reducers.requestKittens(initialStateKittens, {
+        type: REQUEST_KITTENS_SUCCESS,
         payload: [
           {
             id: "123",
             name: "test",
-            email: "test@gmail.com"
-          }
-        ]
+            email: "test@gmail.com",
+          },
+        ],
       })
     ).toEqual({
       isPending: false,
-      robots: [
+      kittens: [
         {
           id: "123",
           name: "test",
-          email: "test@gmail.com"
-        }
+          email: "test@gmail.com",
+        },
       ],
-      error: ""
+      error: "",
     });
   });
 
-  it("sould handle REQUEST_ROBOTS_FAILED action", () => {
+  it("sould handle REQUEST_KITTENS_FAILED action", () => {
     expect(
-      reducers.requestRobots(initialStateRobots, {
-        type: REQUEST_ROBOTS_FAILED,
-        payload: "NOOOO!!!!"
+      reducers.requestKittens(initialStateKittens, {
+        type: REQUEST_KITTENS_FAILED,
+        payload: "NOOOO!!!!",
       })
     ).toEqual({
       isPending: false,
-      robots: [],
-      error: "NOOOO!!!!"
+      kittens: [],
+      error: "NOOOO!!!!",
     });
   });
 });

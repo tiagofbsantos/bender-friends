@@ -1,19 +1,19 @@
 {
-  "name": "bender-friends",
+  "name": "kitten-generator",
   "version": "1.0.0",
   "private": true,
-  "description": "An interactive Progressive Web App with React and Redux for finding bender friends",
+  "description": "An interactive Progressive Web App with React and Redux for generating kittens",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiagofbsantos/bender-friends.git"
+    "url": "git+https://github.com/tiagofbsantos/kitten-generator.git"
   },
   "author": "https://www.tiagofbsantos.com/",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tiagofbsantos/bender-friends/issues"
+    "url": "https://github.com/tiagofbsantos/kitten-generator/issues"
   },
-  "homepage": "https://benderfriends.tiagofbsantos.com/",
+  "homepage": "https://kittengenerator.tiagofbsantos.com/",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

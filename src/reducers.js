@@ -1,15 +1,15 @@
 import {
   CHANGE_SEARCH_FIELD,
-  REQUEST_ROBOTS_PENDING,
-  REQUEST_ROBOTS_SUCCESS,
-  REQUEST_ROBOTS_FAILED
+  REQUEST_KITTENS_PENDING,
+  REQUEST_KITTENS_SUCCESS,
+  REQUEST_KITTENS_FAILED,
 } from "./constants.js";
 
 const initialStateSearch = {
-  searchField: ""
+  searchField: "",
 };
 
-export const searchRobots = (state = initialStateSearch, action = {}) => {
+export const searchKittens = (state = initialStateSearch, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCH_FIELD:
       return Object.assign({}, state, { searchField: action.payload });
@@ -18,25 +18,25 @@ export const searchRobots = (state = initialStateSearch, action = {}) => {
   }
 };
 
-const initialStateRobots = {
+const initialStateKittens = {
   isPending: false,
-  robots: [],
-  error: ""
+  kittens: [],
+  error: "",
 };
 
-export const requestRobots = (state = initialStateRobots, action = {}) => {
+export const requestKittens = (state = initialStateKittens, action = {}) => {
   switch (action.type) {
-    case REQUEST_ROBOTS_PENDING:
+    case REQUEST_KITTENS_PENDING:
       return Object.assign({}, state, { isPending: true });
-    case REQUEST_ROBOTS_SUCCESS:
+    case REQUEST_KITTENS_SUCCESS:
       return Object.assign({}, state, {
-        robots: action.payload,
-        isPending: false
+        kittens: action.payload,
+        isPending: false,
       });
-    case REQUEST_ROBOTS_FAILED:
+    case REQUEST_KITTENS_FAILED:
       return Object.assign({}, state, {
         error: action.payload,
-        isPending: false
+        isPending: false,
       });
     default:
       return state;

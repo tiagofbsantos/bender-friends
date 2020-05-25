@@ -6,8 +6,8 @@ let wrapper;
 
 beforeEach(() => {
   const mockProps = {
-    onRequestRobots: jest.fn(),
-    robots: [],
+    onRequestKittens: jest.fn(),
+    kittens: [],
     searchField: "",
     isPending: false,
   };
@@ -18,10 +18,10 @@ it("renders MainPage without crashing", () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it("filters robots correctly", () => {
+it("filters kittens correctly", () => {
   const mockProps2 = {
-    onRequestRobots: jest.fn(),
-    robots: [
+    onRequestKittens: jest.fn(),
+    kittens: [
       {
         id: 3,
         name: "John",
@@ -32,7 +32,7 @@ it("filters robots correctly", () => {
     isPending: false,
   };
   const wrapper2 = shallow(<MainPage {...mockProps2} />);
-  expect(wrapper2.instance().filterRobots()).toEqual([
+  expect(wrapper2.instance().filterKittens()).toEqual([
     {
       id: 3,
       name: "John",
@@ -41,10 +41,10 @@ it("filters robots correctly", () => {
   ]);
 });
 
-it("filters robots correctly 2", () => {
+it("filters kittens correctly 2", () => {
   const mockProps3 = {
-    onRequestRobots: jest.fn(),
-    robots: [
+    onRequestKittens: jest.fn(),
+    kittens: [
       {
         id: 3,
         name: "John",
@@ -54,9 +54,9 @@ it("filters robots correctly 2", () => {
     searchField: "john",
     isPending: false,
   };
-  const filteredRobots = [];
+  const filteredKittens = [];
   const wrapper3 = shallow(<MainPage {...mockProps3} />);
-  expect(wrapper3.instance().filterRobots()).toEqual([
+  expect(wrapper3.instance().filterKittens()).toEqual([
     {
       id: 3,
       name: "John",

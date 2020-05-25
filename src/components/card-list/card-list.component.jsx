@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
 import Card from "../card/card.component";
 
-const CardList = ({ robots }) => {
+const CardList = ({ kittens }) => {
   return (
     <Fragment>
-      {robots.map((user, i) => {
+      {kittens.map((kitten, i) => {
         return (
           <Card
             key={i}
-            id={robots[i].id}
-            name={robots[i].name}
-            email={robots[i].email}
+            id={kitten.id}
+            name={kitten.name}
+            email={kitten.email}
           />
         );
       })}

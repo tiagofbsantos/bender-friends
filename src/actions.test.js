@@ -1,9 +1,9 @@
 import * as actions from "./actions";
 import {
   CHANGE_SEARCH_FIELD,
-  REQUEST_ROBOTS_PENDING,
-  REQUEST_ROBOTS_SUCCESS,
-  REQUEST_ROBOTS_FAILED
+  REQUEST_KITTENS_PENDING,
+  REQUEST_KITTENS_SUCCESS,
+  REQUEST_KITTENS_FAILED,
 } from "./constants.js";
 
 import configureMockStore from "redux-mock-store";
@@ -11,21 +11,21 @@ import thunkMiddleware from "redux-thunk";
 
 const mockStore = configureMockStore([thunkMiddleware]);
 
-it("should create an action to search robots", () => {
+it("should create an action to search kittens", () => {
   const text = "wooo";
   const expectedAction = {
     type: CHANGE_SEARCH_FIELD,
-    payload: text
+    payload: text,
   };
   expect(actions.setSearchField(text)).toEqual(expectedAction);
 });
 
-it("handles requesting robots API", () => {
+it("handles requesting kittens API", () => {
   const store = mockStore();
-  store.dispatch(actions.requestRobots());
+  store.dispatch(actions.requestKittens());
   const action = store.getActions();
   const expectedAction = {
-    type: REQUEST_ROBOTS_PENDING
+    type: REQUEST_KITTENS_PENDING,
   };
   expect(action[0]).toEqual(expectedAction);
 });

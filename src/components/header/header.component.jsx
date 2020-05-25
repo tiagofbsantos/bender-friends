@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="f1">Bender Friends</h1>
+        <h1 className="f1">Kitten Generator</h1>
         <CounterButton color={"red"} />
       </React.Fragment>
     );

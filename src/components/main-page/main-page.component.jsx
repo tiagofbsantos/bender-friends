@@ -10,12 +10,12 @@ import "./main-page.styles.css";
 
 class MainPage extends Component {
   componentDidMount() {
-    this.props.onRequestRobots();
+    this.props.onRequestKittens();
   }
 
-  filterRobots = () => {
-    return this.props.robots.filter((robot) => {
-      return robot.name
+  filterKittens = () => {
+    return this.props.kittens.filter((kitten) => {
+      return kitten.name
         .toLowerCase()
         .includes(this.props.searchField.toLowerCase());
     });
@@ -25,14 +25,14 @@ class MainPage extends Component {
     const { onSearchChange, isPending } = this.props;
 
     return isPending ? (
-      <h1>Loading</h1>
+      <h1>Pouring the milk, to lure the kittens. Please wait ...</h1>
     ) : (
       <div className="tc">
         <Header />
         <SearchBox searchChange={onSearchChange} />
         <Scroll>
           <ErrorBoundary>
-            <CardList robots={this.filterRobots()} />
+            <CardList kittens={this.filterKittens()} />
           </ErrorBoundary>
         </Scroll>
       </div>

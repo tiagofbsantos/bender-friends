@@ -1,10 +1,24 @@
-# bender-friends
+# kitten-generator
 
-Bender friends - an interactive Progressive Web App with React and Redux for finding bender friends
+An interactive Progressive Web App with React and Redux for generating kittens
 
 Using :
 
-- https://jsonplaceholder.typicode.com/users API for generating the bender friends personal data
-- https://robohash.org/ API for generating bender friends pictures
+- [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/) API for generating kittens personal data
 
-Created using create-react-app
+- [robohash.org](https://robohash.org/) API for generating kittens pictures
+
+- create-react-app
+
+- React
+
+- Redux
+
+- Enzyme and Jest for testing
+
+- CircleCi for CI/CD
+
+- tachyons
+
+
+You can find more info on this project at [tiagofbsantos.com](https://www.tiagofbsantos.com/)
