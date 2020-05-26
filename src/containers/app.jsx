@@ -21,7 +21,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
     onRequestKittens: () => dispatch(requestKittens()),
-    onAddKitten: (kittenName) => dispatch(addKitten(kittenName)),
+    onAddKitten: (kittenName) => {
+      if (!kittenName) {
+        alert(
+          "Kitten name field empty. Please fill kitten name before creating a kitten."
+        );
+      } else {
+        dispatch(addKitten(kittenName));
+      }
+    },
   };
 };
 
