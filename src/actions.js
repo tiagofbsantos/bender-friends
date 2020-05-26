@@ -4,6 +4,7 @@ import {
   REQUEST_KITTENS_PENDING,
   REQUEST_KITTENS_SUCCESS,
   REQUEST_KITTENS_FAILED,
+  ADD_KITTEN,
 } from "./constants.js";
 
 export const setSearchField = (text) => ({
@@ -19,3 +20,8 @@ export const requestKittens = () => (dispatch) => {
       dispatch({ type: REQUEST_KITTENS_FAILED, payload: error })
     );
 };
+
+export const addKitten = (kittenName) => ({
+  type: ADD_KITTEN,
+  payload: kittenName,
+});

@@ -3,6 +3,7 @@ import {
   REQUEST_KITTENS_PENDING,
   REQUEST_KITTENS_SUCCESS,
   REQUEST_KITTENS_FAILED,
+  ADD_KITTEN,
 } from "./constants.js";
 
 const initialStateSearch = {
@@ -38,6 +39,20 @@ export const requestKittens = (state = initialStateKittens, action = {}) => {
         error: action.payload,
         isPending: false,
       });
+    default:
+      return state;
+  }
+};
+
+export const addKitten = (state = initialStateKittens, action = {}) => {
+  switch (action.type) {
+    case ADD_KITTEN:
+      const kitten = {
+        name: action.payload,
+      };
+      let newKittens = state.kittens.slice();
+      newKittens.splice(state.kittens.length, 0, kitten);
+      return { ...state, kittens: newKittens };
     default:
       return state;
   }

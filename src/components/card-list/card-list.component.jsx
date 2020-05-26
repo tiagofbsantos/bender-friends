@@ -5,14 +5,7 @@ const CardList = ({ kittens }) => {
   return (
     <Fragment>
       {kittens.map((kitten, i) => {
-        return (
-          <Card
-            key={i}
-            id={kitten.id}
-            name={kitten.name}
-            email={kitten.email}
-          />
-        );
+        return <Card key={i} name={kitten.name} />;
       })}
     </Fragment>
   );

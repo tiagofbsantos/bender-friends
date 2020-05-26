@@ -5,6 +5,7 @@ import SearchBox from "../search-box/search-box.component";
 import Scroll from "../scroll/scroll.component";
 import ErrorBoundary from "../error-boundary/error-boundary.component";
 import Header from "../header/header.component";
+import CreateKittenButton from "../create-kitten-button/create-kitten-button.component";
 
 import "./main-page.styles.css";
 
@@ -22,13 +23,17 @@ class MainPage extends Component {
   };
 
   render() {
-    const { onSearchChange, isPending } = this.props;
+    const { onSearchChange, onAddKitten, isPending } = this.props;
 
     return isPending ? (
       <h1>Pouring the milk, to lure the kittens. Please wait ...</h1>
     ) : (
       <div className="tc">
         <Header />
+        <CreateKittenButton
+          addKitten={onAddKitten}
+          searchField={this.props.searchField}
+        />
         <SearchBox searchChange={onSearchChange} />
         <Scroll>
           <ErrorBoundary>

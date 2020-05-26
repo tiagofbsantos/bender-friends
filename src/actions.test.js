@@ -1,10 +1,5 @@
 import * as actions from "./actions";
-import {
-  CHANGE_SEARCH_FIELD,
-  REQUEST_KITTENS_PENDING,
-  REQUEST_KITTENS_SUCCESS,
-  REQUEST_KITTENS_FAILED,
-} from "./constants.js";
+import { CHANGE_SEARCH_FIELD, REQUEST_KITTENS_PENDING } from "./constants.js";
 
 import configureMockStore from "redux-mock-store";
 import thunkMiddleware from "redux-thunk";
