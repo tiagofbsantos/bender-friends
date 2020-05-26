@@ -34,7 +34,11 @@ class MainPage extends Component {
           addKitten={onAddKitten}
           searchField={this.props.searchField}
         />
-        <SearchBox searchChange={onSearchChange} />
+        <SearchBox
+          searchChange={onSearchChange}
+          addKitten={onAddKitten}
+          searchField={this.props.searchField}
+        />
         <Scroll>
           <ErrorBoundary>
             <CardList kittens={this.filterKittens()} />
