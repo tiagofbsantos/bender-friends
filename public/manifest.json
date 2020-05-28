@@ -3,8 +3,8 @@
   "name": "Kitten Generator",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favicon.ico?v=3eBXJkgo9R",
+      "sizes": "32x32 16x16",
       "type": "image/x-icon"
     },
     {
@@ -13,8 +13,8 @@
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-256x256.png?v=3eBXJkgo8R",
-      "sizes": "256x256",
+      "src": "/public/android-chrome-512x512.png?v=3eBXJkgo9R",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
